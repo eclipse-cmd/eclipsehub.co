@@ -1,0 +1,181 @@
+@import url('./prism.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --natural: 28 35% 95%;
+  --background: 28 62% 95%;
+  --foreground: 28 5% 0%;
+  --card: 28 50% 90%;
+  --card-foreground: 28 5% 10%;
+  --popover: 28 62% 95%;
+  --popover-foreground: 28 95% 0%;
+  --primary: 28 50% 63.1%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 28 30% 70%;
+  --secondary-foreground: 0 0% 0%;
+  --muted: -10 30% 85%;
+  --muted-foreground: 28 5% 35%;
+  --accent: 28 50% 36%;
+  --accent-foreground: 28 5% 90%;
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 28 5% 90%;
+  --border: 28 30% 50%;
+  --input: 28 30% 18%;
+  --ring: 28 50% 63.1%;
+  --radius: 0.5rem;
+  --accent-gradient: linear-gradient(to right, #cc9d74 0%, #b48257 20%, #8a592e 40%, #8a592e 60%, #6c411c 80%, #4d3017 100%);
+}
+.dark {
+  --natural: 0 0% 0%;
+  --background: 24 9.8% 10%;
+  --foreground: 28 5% 90%;
+  --card: 28 50% 0%;
+  --card-foreground: 28 5% 90%;
+  --popover: 28 50% 5%;
+  --popover-foreground: 28 5% 90%;
+  --primary: 28 50% 63.1%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 28 30% 10%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: -10 30% 15%;
+  --muted-foreground: 28 5% 60%;
+  --accent: 28 50% 64%;
+  --accent-foreground: 28 5% 10%;
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 28 5% 90%;
+  --border: 28 30% 18%;
+  --input: 28 30% 18%;
+  --ring: 28 50% 63.1%;
+  --radius: 0.5rem;
+  --accent-gradient: linear-gradient(to right, #f1cbaa 0%, #cfa179 20%, #d1a075 40%, #d1a075 80%, #e69b5a 80%, #d28642 100%);
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+html,
+body {
+  font-synthesis-weight: none;
+}
+input:focus-visible,
+textarea:focus-visible,
+textarea:focus-within,
+input:focus-within {
+  outline: 0;
+  box-shadow: none;
+}
+.gradient-text {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bg-lead-gradient {
+  background: linear-gradient(180deg, #1ebbff 0%, #d09e72 100%);
+  height: 25rem;
+}
+.x-shadow {
+  box-shadow: inset 0 2px 0 0 rgb(255 255 255 / 25%);
+}
+.-z-1 {
+  z-index: -1;
+}
+.origin-0 {
+  transform-origin: 0%;
+}
+.min-h-50-screen {
+  min-height: 50vh;
+}
+.wave {
+  animation-name: wave-animation;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(12deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(9deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(-8deg);
+  }
+  90% {
+    transform: rotate(7deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.shadow-gradient {
+  background: linear-gradient(rgba(255, 255, 255, 0), hsl(var(--background)));
+}
+@layer components {
+  .font-forward {
+    @apply font-semibold text-4xl md:text-5xl inline-block lg:font-bold;
+  }
+  .text-lead {
+    @apply md:text-lg;
+  }
+  .text-header {
+    @apply text-4xl md:text-5xl font-bold leading-10;
+  }
+  .x-container {
+    @apply lg:max-w-[80%];
+  }
+  .text-header-2 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-10;
+  }
+  .text-lead-xl {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold;
+  }
+  .primary-link {
+    @apply transition text-white hover:text-primary;
+  }
+  .x-button {
+    @apply capitalize flex justify-start items-center space-x-2 font-bold rounded-md px-4 py-3 bg-foreground text-white dark:bg-natural transition;
+    box-shadow: inset 0 2px 0 0 rgb(255 255 255 / 25%);
+    &:hover {
+      @apply text-primary;
+    }
+    &.active {
+      @apply bg-primary text-black;
+      box-shadow: none;
+    }
+  }
+  .ex-overview ul {
+    @apply ps-4 mb-5;
+  }
+  .ex-overview ul li {
+    @apply my-2 list-disc marker:text-primary;
+  }
+}
