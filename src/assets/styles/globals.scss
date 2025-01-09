@@ -140,6 +140,15 @@ input:focus-within {
   background: linear-gradient(rgba(255, 255, 255, 0), hsl(var(--background)));
 }
 @layer components {
+  .hover-group{
+    &:hover{
+      .hover-image{
+        left: 0;
+        top: 0;
+        filter: grayscale(0);
+      }
+    }
+  }
   .font-forward {
     @apply font-semibold text-4xl md:text-5xl inline-block lg:font-bold;
   }

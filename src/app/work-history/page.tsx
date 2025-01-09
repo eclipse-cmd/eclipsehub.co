@@ -30,8 +30,8 @@ export default function Page() {
 
           <div className="flex flex-col space-y-14">
             {WorkHistories.map((experience) => (
-              <div key={experience.company} className="flex flex-col items-center justify-center space-y-6 lg:space-y-0 md:justify-between md:items-start md:flex-row">
-                <div className="w-full space-y-2 lg:w-1/2">
+              <div key={experience.company} className="flex flex-col items-center justify-center space-y-6 lg:space-y-0 md:justify-between md:items-start gap-7 md:flex-row">
+                <div className="w-full space-y-2 lg:w-1/2 order-2">
                   <div className="flex flex-col space-y-1.5">
                     <div className="flex items-center justify-start w-full space-x-2 text-base">
                       <div className="flex items-center space-x-2">
@@ -49,7 +49,7 @@ export default function Page() {
                   <div className="flex justify-start items-center pt-4">
                     <a href={experience.companyUrl} className="inline-flex items-center justify-start group w-fit" target="_blank">
                       <Iconify icon="solar:link-minimalistic-2-linear" className="me-2 text-primary text-3xl" />
-                      <span className="underline transition group-hover:text-primary font-mono">Website</span>
+                      <span className="underline transition group-hover:text-primary font-mono">Link</span>
                     </a>
                   </div>
 
@@ -62,7 +62,7 @@ export default function Page() {
                     <ToolBadge key={tool} tool={tool} />
                   ))}
                 </div>
-                <div className="relative inline-flex w-full group overflow-hidden lg:w-1/2 bg-lead-gradient rounded-2xl">
+                <div className="relative inline-flex w-full group overflow-hidden lg:w-1/2 bg-lead-gradient rounded-2xl order-1">
                   <Image
                     src={experience.imgUrl}
                     alt={experience.company}

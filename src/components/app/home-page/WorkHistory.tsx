@@ -9,7 +9,7 @@ const WorkHistories: iWorkHistory[] = WorkHistoryData;
 
 export const WorkHistorySection = () => {
   return (
-    <div className="group">
+    <div className='group'>
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-header">Work History</h3>
         <Link href="/work-history" className="hidden text-sm opacity-0 md:inline-block primary-link group-hover:opacity-100">
@@ -19,7 +19,7 @@ export const WorkHistorySection = () => {
 
       <div className="flex flex-col mt-3 space-y-14">
         {WorkHistories.slice(0, 3).map((experience) => (
-          <div className="flex flex-col items-center justify-center space-y-6 lg:space-y-0 md:justify-between md:items-start md:flex-row" key={experience.company}>
+          <div className="flex flex-col items-center justify-center space-y-6 lg:space-y-0 md:justify-between md:items-start md:flex-row hover-group" key={experience.company}>
             <div className="w-full space-y-2 lg:w-1/2">
               <div className="flex flex-col space-y-1.5">
                 <div className="flex items-center justify-start w-full space-x-2 text-base">
@@ -41,13 +41,13 @@ export const WorkHistorySection = () => {
                 ))}
               </>
             </div>
-            <a href={experience.companyUrl} target="_blank" className="relative inline-flex group w-full overflow-hidden lg:w-1/2 bg-lead-gradient rounded-2xl">
+            <a href={experience.companyUrl} target="_blank" className="relative inline-flex w-full overflow-hidden lg:w-1/2 bg-lead-gradient rounded-2xl">
               <Image
                 src={experience.imgUrl}
                 alt={experience.company}
                 fill
                 sizes="auto"
-                className="transition !rounded-2xl grayscale object-cover group-hover:grayscale-0 group-hover:left-0"
+                className="transition !rounded-2xl grayscale object-cover hover-image"
                 style={{ left: '2.5rem', top: '2.5rem' }}
               />
             </a>
