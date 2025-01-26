@@ -7,6 +7,7 @@ import type { Metadata } from 'next';
 import { JetBrains_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
 import '../assets/styles/globals.scss';
+// import 'prismjs/themes/prism-tomorrow.css';
 
 const mono = JetBrains_Mono({
   subsets: ['latin'],

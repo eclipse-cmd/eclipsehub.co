@@ -40,7 +40,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             </span>
           </div>
 
-          <div className="text-foreground leading-normal w-full prose mx-auto">
+          <div className="text-foreground leading-normal w-full mx-auto prose">
             <MdxRenderer mdxContent={snippet.body.code} />
           </div>
         </section>
